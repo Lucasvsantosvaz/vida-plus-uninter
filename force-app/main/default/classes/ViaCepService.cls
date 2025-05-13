@@ -33,6 +33,7 @@ public with sharing class ViaCepService {
         @AuraEnabled public String bairro;
         @AuraEnabled public String localidade;
         @AuraEnabled public String uf;
+        @AuraEnabled public String erro;
     }
 
     public class ViaCepServiceException extends Exception {}

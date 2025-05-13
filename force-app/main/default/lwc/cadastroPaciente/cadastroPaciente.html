@@ -14,12 +14,20 @@
                     <lightning-input label="Nome" value={name} onchange={handleInputChange} name="name" required>
                     </lightning-input>
 
+                    <lightning-input label="CPF" value={cpf} onchange={handleInputChange} name="cpf" required
+                        maxlength="11" minlength="11" pattern="[0-9]{11}"
+                        message-when-pattern-mismatch="O CPF deve conter apenas números e 11 caracteres. Exemplo: 11223344556">
+                    </lightning-input>
+
                     <lightning-input label="Telefone Fixo" value={telefoneFixo} onchange={handleInputChange}
-                        name="telefoneFixo" type="tel">
+                        name="telefoneFixo" type="tel" maxlength="10" minlength="10" pattern="[0-9]{10}"
+                        message-when-pattern-mismatch="O telefone fixo deve conter 10 números. Exemplo: 3432323131">
                     </lightning-input>
 
                     <lightning-input label="Telefone Celular" value={telefoneCelular} onchange={handleInputChange}
-                        name="telefoneCelular" type="tel" required>
+                        name="telefoneCelular" type="tel" maxlength="11" minlength="11" pattern="[0-9]{11}"
+                        message-when-pattern-mismatch="O telefone celular deve conter 11 números. Exemplo: 34988887777"
+                        required>
                     </lightning-input>
 
                     <lightning-input label="Email" value={email} onchange={handleInputChange} name="email" type="email">
@@ -43,7 +51,9 @@
                     </div>
 
                     <!-- Campos de endereço -->
-                    <lightning-input label="Estado" value={estado} onchange={handleInputChange} name="estado" required>
+                    <lightning-input label="Estado" value={estado} onchange={handleInputChange} name="estado"
+                        maxlength="2" minlength="2" pattern="[A-Za-z]{2}"
+                        message-when-pattern-mismatch="O estado deve conter exatamente 2 letras. Exemplo: MG" required>
                     </lightning-input>
 
                     <lightning-input label="Cidade" value={cidade} onchange={handleInputChange} name="cidade" required>
