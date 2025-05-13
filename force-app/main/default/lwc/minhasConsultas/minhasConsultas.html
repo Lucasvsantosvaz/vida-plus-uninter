@@ -1,0 +1,27 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+
+    <template if:true={possuiConsulta}>
+        <lightning-card title="Minhas Consultas">
+            <lightning-datatable
+                key-field="Id"
+                data={consultas}
+                columns={columns}
+                hide-checkbox-column="true">
+            </lightning-datatable>
+        </lightning-card>
+    </template>
+
+    <template if:false={possuiConsulta}>
+    <lightning-card title="Minhas Consultas">
+        <div class="slds-p-around_medium slds-text-align_center slds-m-top_x-large">
+            <lightning-icon icon-name="utility:event" size="large" class="slds-m-bottom_small"></lightning-icon>
+            <p class="slds-text-heading_medium">Olá, Dr(a). {nomeUsuario}!</p>
+            <p class="slds-m-top_x-small">Você não possui consultas agendadas no momento.</p>
+        </div>
+    </lightning-card>
+</template>
+
+</template>

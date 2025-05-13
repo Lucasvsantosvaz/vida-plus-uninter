@@ -1,0 +1,74 @@
+<template>
+    <div lwc:if={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </div>
+
+    <lightning-card>
+        <div class="title">
+            <p>Cadastro de Paciente</p>
+        </div>
+        <div class="slds-p-around_medium container">
+            <div class="slds-grid slds-wrap">
+                <!-- Lado Esquerdo -->
+                <div class="slds-col slds-size_1-of-2 slds-p-right_medium">
+                    <lightning-input label="Nome" value={name} onchange={handleInputChange} name="name" required>
+                    </lightning-input>
+
+                    <lightning-input label="Telefone Fixo" value={telefoneFixo} onchange={handleInputChange}
+                        name="telefoneFixo" type="tel">
+                    </lightning-input>
+
+                    <lightning-input label="Telefone Celular" value={telefoneCelular} onchange={handleInputChange}
+                        name="telefoneCelular" type="tel" required>
+                    </lightning-input>
+
+                    <lightning-input label="Email" value={email} onchange={handleInputChange} name="email" type="email">
+                    </lightning-input>
+                </div>
+
+                <!-- Lado Direito -->
+                <div class="slds-col slds-size_1-of-2">
+                    <!-- Linha do CEP e botão -->
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_2-of-3">
+                            <lightning-input label="CEP" value={cep} onchange={handleInputChange} name="cep"
+                                maxlength="8" minlength="8" pattern="[0-9]{8}"
+                                message-when-pattern-mismatch="Digite apenas 8 números">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3 slds-align-bottom">
+                            <lightning-button label="Pesquisar" variant="neutral" onclick={handlePesquisarCEP}>
+                            </lightning-button>
+                        </div>
+                    </div>
+
+                    <!-- Campos de endereço -->
+                    <lightning-input label="Estado" value={estado} onchange={handleInputChange} name="estado" required>
+                    </lightning-input>
+
+                    <lightning-input label="Cidade" value={cidade} onchange={handleInputChange} name="cidade" required>
+                    </lightning-input>
+
+                    <lightning-input label="Bairro" value={bairro} onchange={handleInputChange} name="bairro" required>
+                    </lightning-input>
+
+                    <lightning-input label="Rua" value={rua} onchange={handleInputChange} name="rua" required>
+                    </lightning-input>
+
+                    <lightning-input label="Número" value={numero} onchange={handleInputChange} name="numero" required>
+                    </lightning-input>
+
+                    <lightning-input label="Complemento" value={complemento} onchange={handleInputChange}
+                        name="complemento">
+                    </lightning-input>
+                </div>
+            </div>
+
+            <!-- Botão Cadastrar -->
+            <div class="slds-m-top_medium">
+                <lightning-button label="Cadastrar" variant="brand" onclick={handleSubmit} disabled={cadastrarDisable}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
