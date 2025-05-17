@@ -4,14 +4,7 @@ public with sharing class AtestadoController {
 
     public AtestadoController() {
         Id consultaId = ApexPages.currentPage().getParameters().get('id');
-        consulta = [
-            SELECT Id, Data__c, Hospital__c,
-                   Medico__r.Name,
-                   Paciente__r.Name
-            FROM Consulta__c 
-            WHERE Id = :consultaId 
-            LIMIT 1
-        ];
+        consulta = ConsultaDAO.getConsultaById(consultaId);
     }
 
     public String getNomeMedico() {
