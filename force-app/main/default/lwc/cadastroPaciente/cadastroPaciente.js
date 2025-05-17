@@ -103,10 +103,10 @@ export default class CadastroPaciente extends NavigationMixin(LightningElement) 
             }, 1000);
 
              setTimeout(() => {
-                this.showToast('Sucesso', 'Paciente cadastrado com sucesso!', 'success', 'dismissable');
+                this.showToast('Sucesso', 'Paciente cadastrado(a) com sucesso!', 'success', 'dismissable');
             }, 1300);
         } catch (error) {
-            this.showToast('Erro', error, 'error', 'dismissable');
+            this.showToast('Erro', error.body.message, 'error', 'dismissable');
         } finally{
             this.showSpinner = false;
         }

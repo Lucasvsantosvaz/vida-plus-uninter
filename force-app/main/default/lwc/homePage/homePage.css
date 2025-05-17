@@ -1,0 +1,43 @@
+.welcome-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    padding: 10px 0;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.welcome-text p {
+    margin: 0;
+    text-align: center;
+}
+
+.welcome-text strong {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0070d2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #333333;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.image-container img {
+    max-width: 800px;  
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

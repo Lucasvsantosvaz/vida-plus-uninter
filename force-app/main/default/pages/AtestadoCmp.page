@@ -1,0 +1,16 @@
+<apex:page controller="AtestadoController" renderAs="pdf" showHeader="false" sidebar="false">
+
+    <h1 style="text-align:center; font-family: Arial, sans-serif; margin-bottom: 40px;">Atestado de Comparecimento</h1>
+
+    <div style="font-family: Arial, sans-serif; font-size: 14pt; margin-bottom: 40px;">
+        <apex:outputText escape="false" 
+            value="Certificamos que o(a) paciente <b>{!NomePaciente}</b> compareceu à consulta no <b>{!NomeHospital}</b>, com o médico <b>{!NomeMedico}</b>, realizada em <b>{!TEXT(DATEVALUE(consulta.Data__c))}</b>."/>
+    </div>
+
+
+    <div style="font-family: Arial, sans-serif; font-weight: bold; text-align: right; margin-top: 100px;">
+        ___________________________________<br/>
+        Assinatura e carimbo do Médico
+    </div>
+
+</apex:page>

@@ -7,8 +7,7 @@ import getConsultasByMedico from '@salesforce/apex/MinhasConsultasController.get
 
 import { NavigationMixin } from 'lightning/navigation';
 
-const COLUMNS = [
-    {
+const COLUMNS = [{
         label: 'Consulta',
         fieldName: 'consultaLink',
         type: 'url',
